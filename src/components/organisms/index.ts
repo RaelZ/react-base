@@ -1,2 +1,2 @@
-export * from './Sidebar'
-export * from './ThemeConsumer'
+export * from './Sidebar';
+export * from './ThemeConsumer';

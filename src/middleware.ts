@@ -1,16 +1,21 @@
-import { NextRequest, NextResponse } from "next/server"
+import { NextRequest, NextResponse } from 'next/server';
 
-const supportedLocales = ["/en", "/pt"]
-const defaultLocale = "/en"
+const supportedLocales = ['us', 'br'];
+const defaultLocale = '/us';
 
 export function middleware(req: NextRequest) {
-  const { pathname } = req.nextUrl
+  const { pathname } = req.nextUrl;
 
-  if (!supportedLocales.includes(pathname)) {
-    return NextResponse.redirect(new URL(`${defaultLocale}`, req.url))
+  const url = pathname.split('/')[1];
+
+  if (pathname === '/') {
+    return NextResponse.next();
+  }
+  if (!supportedLocales.includes(url)) {
+    return NextResponse.redirect(new URL(`${defaultLocale}`, req.url));
   }
 
-  return NextResponse.next()
+  return NextResponse.next();
 }
 
 export const config = {
@@ -22,6 +27,6 @@ export const config = {
      * - _next/image (image optimization files)
      * - favicon.ico, sitemap.xml, robots.txt (metadata files)
      */
-    "/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)",
+    '/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)',
   ],
-}
+};

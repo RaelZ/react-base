@@ -1,4 +1,4 @@
-"use client"
-import { atom } from "jotai"
+'use client';
+import { atom } from 'jotai';
 
-export const themeModeAtom = atom<"light" | "dark">("light")
+export const themeModeAtom = atom<'light' | 'dark'>('light');

@@ -1,46 +1,52 @@
-"use client"
-import "@/styles/global.css"
-import { useEffect, useState } from "react"
-import { Provider as JotaiProvider, createStore } from "jotai"
-import { Inter } from "next/font/google"
-import { usePathname, useRouter } from "next/navigation"
-import { ThemeConsumer } from "@/components"
-import i18n from "@/translations"
+'use client';
+import '@/styles/global.css';
+import { useEffect, useState } from 'react';
+import { Provider as JotaiProvider, createStore, useAtom } from 'jotai';
+import { Inter } from 'next/font/google';
+import { usePathname, useRouter } from 'next/navigation';
+import { ThemeConsumer } from '@/components';
+import i18n, { languages } from '@/translations';
+import { languageAtom } from '@/store';
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ['latin'] });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  const pathname = usePathname()
-  const router = useRouter()
-
-  const [jotaiStore] = useState(() => createStore())
-  const [hydrated, setHydrated] = useState(false)
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const router = useRouter();
+  const [jotaiStore] = useState(() => createStore());
+  const [hydrated, setHydrated] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useAtom(languageAtom);
 
   useEffect(() => {
-    setHydrated(true)
+    setHydrated(true);
 
-    if (!pathname) return
-    const lang = pathname.split("/")[1]
-    if (lang && ["en", "pt"].includes(lang)) {
-      i18n.changeLanguage(lang)
+    if (!pathname) return;
+
+    const lang = pathname.split('/')[1];
+
+    if (lang && languages.some(({ code }) => code === lang)) {
+      if (i18n.language !== lang) {
+        i18n.changeLanguage(lang);
+        setSelectedLanguage(lang);
+        localStorage.setItem('language', lang);
+      }
     } else {
-      router.push("/pt")
+      const storedLang = localStorage.getItem('language') || 'pt';
+      setSelectedLanguage(storedLang);
+      i18n.changeLanguage(storedLang);
+      router.replace(`/${storedLang}`);
     }
-  }, [pathname, router])
+  }, [pathname, router, setSelectedLanguage]);
 
-  if (!hydrated) return null
+  if (!hydrated) return <></>;
 
   return (
-    <html lang={i18n.language}>
+    <html lang={selectedLanguage} cz-shortcut-listen='true'>
       <body className={inter.className}>
         <JotaiProvider store={jotaiStore}>
           <ThemeConsumer>{children}</ThemeConsumer>
         </JotaiProvider>
       </body>
     </html>
-  )
+  );
 }

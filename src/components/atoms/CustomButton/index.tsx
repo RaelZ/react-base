@@ -1,18 +1,15 @@
-"use client"
-import React from "react"
-import { Button, ButtonProps } from "@mui/material"
+'use client';
+import React from 'react';
+import { Button, ButtonProps } from '@mui/material';
 
-export const CustomButton: React.FC<CustomButtonProps> = ({
-  label,
-  ...props
-}) => {
+export const CustomButton: React.FC<CustomButtonProps> = ({ label, ...props }) => {
   return (
-    <Button variant="contained" {...props}>
+    <Button variant='contained' {...props}>
       {label}
     </Button>
-  )
-}
+  );
+};
 
 interface CustomButtonProps extends ButtonProps {
-  label: string
+  label: string;
 }
