@@ -24,8 +24,8 @@ export const Sidebar: FC<SidebarProps> = ({ openInitially = true, onClose }) => 
   const toggleCollapsed = useCallback(() => setCollapsed((prev) => !prev), []);
 
   return (
-    <Drawer variant='permanent' open={!collapsed} onClose={onClose} sx={drawerSx(collapsed)}>
-      <Box role='presentation' sx={boxSx}>
+    <Drawer variant="permanent" open={!collapsed} onClose={onClose} sx={drawerSx(collapsed)}>
+      <Box role="presentation" sx={boxSx}>
         <Toolbar sx={toolbarSx(collapsed)}>
           <IconButton onClick={toggleCollapsed}>{collapsed ? <Menu /> : <MenuOpen />}</IconButton>
         </Toolbar>
@@ -63,11 +63,11 @@ export const Sidebar: FC<SidebarProps> = ({ openInitially = true, onClose }) => 
           />
           <Divider />
           <Box
-            display='flex'
+            display="flex"
             p={1}
             gap={1}
             flexDirection={collapsed ? 'column-reverse' : 'row'}
-            alignItems='center'
+            alignItems="center"
           >
             <ChangeTheme />
             <ChangeLanguage />

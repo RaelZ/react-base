@@ -1,3 +1,3 @@
-export * from './ChangeTheme';
-export * from './MenuItem';
-export * from './ChangeLanguage';
+export * from './change-theme';
+export * from './menu-item';
+export * from './change-language';

@@ -8,7 +8,7 @@
   "arrowParens": "always",
   "bracketSpacing": true,
   "endOfLine": "lf",
-  "jsxSingleQuote": true,
+  "jsxSingleQuote": false,
   "proseWrap": "preserve",
   "quoteProps": "as-needed"
 }

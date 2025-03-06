@@ -1,11 +1,12 @@
 import { us } from './us';
 import { br } from './br';
+import { LanguageState } from '@/store';
 
 export { us, br };
 
 interface ILangs {
   flag: string;
-  code: string;
+  code: LanguageState['language'];
   label: string;
 }
 

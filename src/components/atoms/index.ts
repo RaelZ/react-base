@@ -1,2 +1,2 @@
-export * from './CustomButton';
-export * from './PageLoading';
+export * from './custom-button';
+export * from './page-loading';

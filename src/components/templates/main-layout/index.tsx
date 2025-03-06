@@ -9,12 +9,12 @@ interface MainLayoutProps {
 
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <Box sx={{ display: 'flex' }}>
+    <div style={{ display: 'flex' }}>
       <CssBaseline />
       <Sidebar />
-      <Box component='main' sx={{ flexGrow: 1, p: 2 }}>
+      <Box component="main" sx={{ flexGrow: 1, p: 2 }}>
         {children}
       </Box>
-    </Box>
+    </div>
   );
 };

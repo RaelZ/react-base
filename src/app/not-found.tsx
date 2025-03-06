@@ -18,10 +18,10 @@ export default function NotFound() {
   return (
     <main style={{ ...mainStyle }}>
       <ErrorOutlineRounded sx={iconSx} />
-      <Typography variant='overline' fontSize={24}>
+      <Typography variant="overline" fontSize={24}>
         <strong>404</strong> - Page not found
       </Typography>
-      <Typography variant='overline' mb={2}>
+      <Typography variant="overline" mb={2}>
         returning to home page
       </Typography>
       <CircularProgress />
