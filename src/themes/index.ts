@@ -1,60 +1,16 @@
 'use client';
 import { createTheme, ThemeOptions } from '@mui/material/styles';
 import { PaletteMode } from '@mui/material';
+import { darkPalette } from './dark';
+import { lightPalette } from './light';
 
-/**
- * Paletas de cores base para light e dark
- */
-const lightPalette = {
-  background: {
-    default: '#f7f7f7',
-    paper: '#FFFFFF',
-  },
-  text: {
-    primary: '#1a1a1a',
-    secondary: '#666666',
-  },
-  primary: {
-    main: '#ff8400', // cor de destaque
-  },
-  secondary: {
-    main: '#1a1a1a',
-  },
-};
-
-const darkPalette = {
-  background: {
-    default: '#1a1a1a',
-    paper: '#2c2c2c',
-  },
-  text: {
-    primary: '#f7f7f7',
-    secondary: '#bfbfbf',
-  },
-  primary: {
-    main: '#ff8400', // cor de destaque
-  },
-  secondary: {
-    main: '#f7f7f7',
-  },
-};
-
-/**
- * Gera o objeto de opções de tema baseado no modo (light ou dark).
- */
 const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
   palette: {
     mode,
     ...(mode === 'light' ? lightPalette : darkPalette),
   },
   typography: {
-    fontFamily: [
-      'Roboto',
-      'Helvetica',
-      'Arial',
-      'sans-serif',
-      // Você pode adicionar outras fontes personalizadas
-    ].join(','),
+    fontFamily: ['Roboto', 'Helvetica', 'Arial', 'sans-serif'].join(','),
     h1: {
       fontWeight: 700,
       fontSize: '2rem',
@@ -81,7 +37,7 @@ const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
   shape: {
     borderRadius: 8,
   },
-  spacing: 8, // base spacing (1x = 8px)
+  spacing: 8,
   breakpoints: {
     values: {
       xs: 0,
@@ -93,10 +49,5 @@ const getDesignTokens = (mode: PaletteMode): ThemeOptions => ({
   },
 });
 
-/**
- * Exporte instâncias prontas de tema para uso.
- * Você pode trocar entre lightTheme e darkTheme dinamicamente
- * caso queira oferecer um toggle de tema.
- */
 export const lightTheme = createTheme(getDesignTokens('light'));
 export const darkTheme = createTheme(getDesignTokens('dark'));

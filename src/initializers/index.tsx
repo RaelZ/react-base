@@ -1,9 +1,5 @@
 import { FC, ReactNode, ComponentType } from 'react';
 
-export * from './language';
-export * from './theme';
-export * from './redux';
-
 type TInitializer = ComponentType<{ children: ReactNode }>;
 
 type TInitialize = {
@@ -16,3 +12,7 @@ export const Initializers: FC<TInitialize> = ({ children, initializers }) => {
     return <Initializer>{acc}</Initializer>;
   }, children);
 };
+
+export * from './language';
+export * from './theme';
+export * from './redux';

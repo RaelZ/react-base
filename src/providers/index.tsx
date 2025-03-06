@@ -1,7 +1,5 @@
 import { ElementType, FC, ReactNode } from 'react';
 
-export * from './client-side';
-
 type TProviders = {
   children: ReactNode;
   providers: ProviderItem[];
@@ -17,3 +15,5 @@ export const Providers: FC<TProviders> = ({ children, providers }) => {
     return <Component {...props}>{acc}</Component>;
   }, children);
 };
+
+export * from './client-side';
