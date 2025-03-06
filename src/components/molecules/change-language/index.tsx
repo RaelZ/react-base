@@ -1,6 +1,6 @@
 'use client';
 import React, { useState, useEffect, useCallback } from 'react';
-import { Menu, MenuItem } from '@mui/material';
+import { Box, Menu, MenuItem } from '@mui/material';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'react-redux';
@@ -56,7 +56,7 @@ export const ChangeLanguage: React.FC = () => {
   );
 
   return (
-    <>
+    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <Flag
         onClick={handleOpenMenu}
         code={i18n.language.toUpperCase()}
@@ -82,16 +82,16 @@ export const ChangeLanguage: React.FC = () => {
           </MenuItem>
         ))}
       </Menu>
-    </>
+    </Box>
   );
 };
 
 const menuItemSx = { py: 1, px: 0.5 };
 
 const countryStyle = {
-  height: '100%',
-  width: 28,
-  borderRadius: 64,
+  minHeight: 18,
+  width: 24,
+  borderRadius: 100,
   cursor: 'pointer',
   ':hover': {
     opacity: 0.7,

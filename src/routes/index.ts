@@ -21,6 +21,10 @@ interface IRoutes {
   icon: OverridableComponent<SvgIconTypeMap<object, 'svg'>> & {
     muiName: string;
   };
+  subRoutes?: ISubRoute[];
+}
+export interface ISubRoute extends Omit<IRoutes, 'icon' | 'subRoutes'> {
+  icon?: IRoutes['icon'];
 }
 
 export const routes: IRoutes[] = [
@@ -28,7 +32,6 @@ export const routes: IRoutes[] = [
     path: '/page-1',
     text: 'page-1',
     icon: Layers,
-    color: 'primary',
   },
   {
     path: '/page-2',

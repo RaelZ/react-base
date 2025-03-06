@@ -1,4 +1,6 @@
-export const darkPalette = {
+import { PaletteOptions } from '@mui/material';
+
+export const darkPalette: PaletteOptions = {
   background: {
     default: '#1a1a1a',
     paper: '#2c2c2c',

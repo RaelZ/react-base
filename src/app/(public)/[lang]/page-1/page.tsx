@@ -1,4 +1,5 @@
 'use client';
+import { Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 
 export default function Page1() {
@@ -6,8 +7,8 @@ export default function Page1() {
 
   return (
     <main>
-      <h1>{t('pages.home.welcome')}</h1>
-      <p>{t('pages.home.description')}</p>
+      <Typography variant="h1">{t('pages.page-1.title')}</Typography>
+      <Typography variant="subtitle2">{t('pages.page-1.description')}</Typography>
     </main>
   );
 }
