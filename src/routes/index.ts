@@ -1,4 +1,4 @@
-import { Layers } from '@mui/icons-material';
+import { LooksTwo, LooksOne } from '@mui/icons-material';
 import { OverridableStringUnion } from '@mui/types';
 import { SvgIconPropsColorOverrides, SvgIconTypeMap } from '@mui/material';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
@@ -31,11 +31,11 @@ export const routes: IRoutes[] = [
   {
     path: '/page-1',
     text: 'page-1',
-    icon: Layers,
+    icon: LooksOne,
   },
   {
     path: '/page-2',
     text: 'page-2',
-    icon: Layers,
+    icon: LooksTwo,
   },
 ];
