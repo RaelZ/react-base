@@ -1,0 +1,26 @@
+{
+  "title": "Settings",
+  "logout": "Logout",
+  "table": {
+    "item": "Setting",
+    "value": "Value",
+    "actions": "Actions"
+  },
+  "language": "Language",
+  "languages": {
+    "us": "English (US)",
+    "br": "Portuguese (Brazil)",
+    "es": "Spanish",
+    "fr": "French",
+    "de": "German",
+    "it": "Italian",
+    "ru": "Russian",
+    "zh": "Chinese"
+  },
+  "theme": "Theme",
+  "themes": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
+}

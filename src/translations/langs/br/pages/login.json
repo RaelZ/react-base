@@ -1,0 +1,12 @@
+{
+  "title": "Login",
+  "email": "Email",
+  "password": "Senha",
+  "remember": "Lembrar de mim",
+  "submit": "Entrar",
+  "errors": {
+    "emailInvalid": "Email inválido!",
+    "emailRequired": "Email obrigatório",
+    "passwordRequired": "Senha obrigatória"
+  }
+}

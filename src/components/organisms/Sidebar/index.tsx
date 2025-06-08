@@ -12,9 +12,9 @@ import {
   Divider,
   Collapse,
 } from '@mui/material';
-import { MenuOpen, Menu, Home, AccountCircle } from '@mui/icons-material';
+import { MenuOpen, Menu, Home, Settings } from '@mui/icons-material';
 import { useTranslation } from 'react-i18next';
-import { MenuItem, ChangeTheme, ChangeLanguage } from '@/components';
+import { MenuItem } from '@/components';
 import { routes } from '@/routes';
 import { usePathname, useRouter } from 'next/navigation';
 
@@ -69,7 +69,7 @@ export const Sidebar: FC<SidebarProps> = ({ openInitially = true, onClose }) => 
 
   return (
     <Drawer variant="permanent" open={!collapsed} onClose={onClose} sx={drawerSx}>
-      <Box role="presentation" sx={{ overflowX: 'hidden' }}>
+      <Box sx={{ overflowX: 'hidden' }}>
         <Toolbar sx={toolbarSx}>
           <IconButton onClick={toggleCollapsed}>{collapsed ? <Menu /> : <MenuOpen />}</IconButton>
         </Toolbar>
@@ -147,22 +147,11 @@ export const Sidebar: FC<SidebarProps> = ({ openInitially = true, onClose }) => 
         <List sx={{ py: 0 }}>
           <Divider />
           <MenuItem
-            icon={<AccountCircle />}
-            text={t('sidebar.profile')}
+            icon={<Settings />}
+            text={t('sidebar.settings')}
             collapsed={collapsed}
-            onClick={() => console.log('Ir para Perfil')}
+            onClick={() => push(`${lang}/settings`)}
           />
-          <Divider />
-          <Box
-            display="flex"
-            p={1}
-            gap={1}
-            flexDirection={collapsed ? 'column-reverse' : 'row'}
-            alignItems="center"
-          >
-            <ChangeTheme />
-            <ChangeLanguage />
-          </Box>
         </List>
       </Box>
     </Drawer>

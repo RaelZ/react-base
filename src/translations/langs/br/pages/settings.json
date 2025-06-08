@@ -1,0 +1,26 @@
+{
+  "title": "Configurações",
+  "logout": "Sair",
+  "table": {
+    "item": "Configuração",
+    "value": "Valor",
+    "actions": "Ações"
+  },
+  "language": "Idioma",
+  "languages": {
+    "us": "Inglês (EUA)",
+    "br": "Português (Brasil)",
+    "es": "Espanhol",
+    "fr": "Francês",
+    "de": "Alemão",
+    "it": "Italiano",
+    "ru": "Russo",
+    "zh": "Chinês"
+  },
+  "theme": "Tema",
+  "themes": {
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  }
+}
